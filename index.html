@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de pobreza en México</title>
+</head>
+<body>
+    <h1>Medición de la pobreza en México 2008-2018</h1>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Año', 'Pobreza (%)', 'Pobreza extrema (%)'],
+      ['2008', 44.4, 11.0],
+      ['2010', 46.1, 11.3],
+      ['2012', 45.5, 9.8],
+      ['2014', 46.2, 9.5],
+      ['2016', 43.6, 7.6],
+      ['2018', 41.9, 7.4]
+    ]);
+    var options = {
+      title: 'Pobreza y pobreza extrema en México, 2008-2018',
+      curveType: 'function',
+      legend: { position: 'bottom' },
+      hAxis: {
+        title: 'Año'
+      },
+      vAxis: {
+        title: 'Porcentaje (%)'
+      }
+    };
+
+    var chart = new google.visualization.LineChart(
+      document.getElementById('grafico1')
+    );
+    chart.draw(data, options);
+
+var data2 = google.visualization.arrayToDataTable([
+  ['Carencia social', '2008 (%)', '2018 (%)'],
+  ['Rezago educativo', 21.9, 16.9],
+  ['Acceso a los servicios de salud', 38.4, 16.2],
+  ['Acceso a la seguridad social', 65.0, 57.3],
+  ['Calidad y espacios de la vivienda', 17.7, 11.1],
+  ['Acceso a los servicios básicos en la vivienda', 22.9, 19.8],
+  ['Acceso a la alimentación', 21.7, 20.4]
+]);
+var options2 = {
+  title: 'Carencias sociales: comparación 2008-2018',
+  legend: { position: 'bottom' },
+  hAxis: { title: 'Porcentaje (%)' }
+};
+
+var chart2 = new google.visualization.BarChart(
+  document.getElementById('grafico2')
+);
+
+chart2.draw(data2, options2);
+
+var data3 = google.visualization.arrayToDataTable([
+  ['Lugar de residencia', 'Porcentaje'],
+  ['Rural', 55.3],
+  ['Urbana', 37.6]
+]);
+
+var options3 = {
+  title: 'Población en situación de pobreza por lugar de residencia, 2018',
+  pieHole: 0
+};
+
+var chart3 = new google.visualization.PieChart(
+  document.getElementById('grafico3')
+);
+
+chart3.draw(data3, options3);
+
+var data4 = google.visualization.arrayToDataTable([
+  ['Sexo', 'Población en situación de pobreza (%)'],
+  ['Mujeres', 42.4],
+  ['Hombres', 41.4]
+]);
+
+var options4 = {
+  title: 'Población en situación de pobreza por sexo, 2018',
+  legend: { position: 'none' },
+  vAxis: { title: 'Porcentaje (%)' }
+};
+
+var chart4 = new google.visualization.ColumnChart(
+  document.getElementById('grafico4')
+);
+
+chart4.draw(data4, options4);
+
+var data5 = google.visualization.arrayToDataTable([
+  ['Pobreza (%)', 'Pobreza extrema (%)'],
+  [26.2, 1.2],
+  [23.3, 1.0],
+  [18.1, 1.5],
+  [49.0, 8.4],
+  [76.4, 29.7],
+  [26.2, 2.5],
+  [30.6, 1.7],
+  [22.5, 1.6],
+  [30.4, 2.4],
+  [37.3, 2.2],
+  [43.4, 6.3],
+  [66.5, 26.8],
+  [43.8, 6.8],
+  [28.4, 3.0],
+  [42.7, 5.0],
+  [46.0, 6.1],
+  [50.8, 7.0],
+  [34.8, 5.0],
+  [14.5, 0.5],
+  [66.4, 23.3],
+  [58.0, 8.6],
+  [27.6, 1.7],
+  [27.6, 3.6],
+  [42.1, 7.3],
+  [30.9, 3.6],
+  [26.7, 2.4],
+  [53.6, 14.4],
+  [35.1, 3.5],
+  [48.4, 6.5],
+  [61.8, 17.7],
+  [40.8, 6.5],
+  [49.2, 3.6]
+]);
+
+var options5 = {
+  title: 'Pobreza y pobreza extrema por entidad federativa, 2018',
+  hAxis: { title: 'Pobreza (%)' },
+  vAxis: { title: 'Pobreza extrema (%)' },
+  legend: { position: 'none' },
+  pointSize: 6
+};
+
+var chart5 = new google.visualization.ScatterChart(
+  document.getElementById('grafico5')
+);
+
+chart5.draw(data5, options5);
+}
+</script>
+</body>
+<h2>1. Pobreza y pobreza extrema, 2008-2018</h2>
+<div id="grafico1" style="width: 100%; height: 500px;"></div>
+
+<h2>2. Carencias sociales: comparación 2008-2018</h2>
+<div id="grafico2" style="width: 100%; height: 500px;"></div>
+
+<h2>3. Pobreza por lugar de residencia, 2018</h2>
+<div id="grafico3" style="width: 100%; height: 500px;"></div>
+
+<h2>4. Pobreza por sexo, 2018</h2>
+<div id="grafico4" style="width: 100%; height: 500px;"></div>
+
+<h2>5. Pobreza y pobreza extrema por entidad federativa, 2018</h2>
+<div id="grafico5" style="width: 100%; height: 500px;"></div>
+</body>
+</html>
+</html>
